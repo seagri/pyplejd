@@ -79,6 +79,7 @@ class PlejdManager:
 
     async def lastdata_callback(self, data: LastData):
         found = False
+        print("LOADED SEAGRI PYPLEJD:", pyplejd.__version__, pyplejd.__file__)
         for d in self.devices:
             if data.address in [d.address, d.rxAddress]:
                 found = True
