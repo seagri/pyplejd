@@ -80,7 +80,7 @@ class PlejdManager:
     async def lastdata_callback(self, data: LastData):
         found = False
         for d in self.devices:
-            if data.address in [d.address, d.rxAddress, 0]:
+            if data.address in [d.address, d.rxAddress]:
                 found = True
                 await d.parse_lastdata(data)
 
